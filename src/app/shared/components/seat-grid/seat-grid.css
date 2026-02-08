@@ -1,0 +1,38 @@
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 60px);
+    gap: 8px;
+    justify-content: center;
+}
+
+button {
+    padding: 10px;
+    border-radius: 6px;
+    border: none;
+    background: #e0e0e0;
+    cursor: pointer;
+}
+
+.legend {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.legend div {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.box {
+  width: 16px;
+  height: 16px;
+  border-radius: 3px;
+}
+
+.available { background: #e0e0e0; }
+.selected { background: #4caf50; }
+.booked { background: #616161; }

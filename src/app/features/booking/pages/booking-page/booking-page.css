@@ -1,0 +1,36 @@
+
+.row {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+input {
+    padding: 10px;
+    width: 180px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.book {
+    padding: 12px 22px;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.book:not(:disabled) {
+    background: #1976d2;
+}
+
+.book:not(:disabled):hover {
+    background: #1565c0;
+}
+
+.book:disabled {
+    background: #b0bec5;
+    cursor: not-allowed;
+}

@@ -1,0 +1,20 @@
+<div class="grid">
+  @for(seat of seats; track seat){
+    <button
+      (click)="toggle(seat)"
+      [disabled]="booked.includes(seat)"
+      [ngClass]="{
+        'available': !booked.includes(seat) && !selected.includes(seat),
+        'selected': selected.includes(seat),
+        'booked': booked.includes(seat)
+      }">
+      {{ seat }}
+    </button>
+  }
+</div>
+
+<div class="legend">
+  <div><span class="box available"></span> Available</div>
+  <div><span class="box selected"></span> Selected</div>
+  <div><span class="box booked"></span> Booked</div>
+</div>

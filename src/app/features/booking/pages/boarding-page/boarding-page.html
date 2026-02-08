@@ -1,0 +1,47 @@
+<div class="card">
+  <div class="header">
+    <h2> Boarding List</h2>
+    <div class="toolbar">
+      <input type="date" [(ngModel)]="date" [min]="today">
+      <button class="primary" (click)="checkList()">Check List</button>
+    </div>
+  </div>
+  @if(bookingList.length === 0){
+  <div class="empty">
+    <p>No bookings for selected date</p>
+  </div>
+  } @else {
+  <table>
+    <thead>
+      <tr>
+        <th>S No.</th>
+        <th>Booking ID</th>
+        <th>Seats</th>
+        <th>Call</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for(booking of bookingList; track booking; let idx = $index){
+      <tr>
+        <td>{{idx+1}}</td>
+        <td class="bookingId">{{booking.bookingId}}</td>
+        <td>
+          <span class="seat-badge">
+            {{booking.seats.join(', ')}}
+          </span>
+        </td>
+        <td>
+          {{booking.mobile}}
+        </td>
+        <td>
+          <button class="status" [class.done]="booking.boarded" (click)="borderStatus(booking)">
+            {{booking.boarded ? 'Boarded' : 'Mark Boarded'}}
+          </button>
+        </td>
+      </tr>
+      }
+    </tbody>
+  </table>
+  }
+</div>

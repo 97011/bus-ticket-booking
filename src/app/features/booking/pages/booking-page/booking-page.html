@@ -1,0 +1,11 @@
+<div class="card">
+    <h2>Book Ticket</h2>
+    <form [formGroup]="bookingForm" class="row">
+        <input type="date" formControlName="date" [min]="today" />
+        <input placeholder="Mobile" formControlName="mobile" maxlength="10" (keydown)="allowNumbersOnly($event)" />
+        <button type="button" class="book" [disabled]="bookingForm.invalid || seats.length === 0" (click)="book()">
+            Book
+        </button>
+    </form>
+    <app-seat-grid [booked]="bookedSeats" (seatChange)="seats=$event"></app-seat-grid>
+</div>
