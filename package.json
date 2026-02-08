@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "deploy": "ng build --base-href=/bus-ticket-booking/ && npx gh-pages -d dist/bus-ticket-booking-system"
+    "deploy": "ng build --base-href=/bus-ticket-booking/ && npx gh-pages -d dist/bus-ticket-booking"
   },
   "prettier": {
     "printWidth": 100,
